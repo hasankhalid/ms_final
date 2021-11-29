@@ -2,6 +2,8 @@ let particles = [];
 
 let r = 50;
 let r2 = 60;
+let r3 = window.innerHeight/4;
+
 let x_off = 1000,y_off = 1000,z_off = 1000;
 let vertices_amount = 200;
 
@@ -23,26 +25,60 @@ let loadingOpacity = 255;
 let loadedOpacity = 0;
 
 let blobTranslate = 0;
+let secondBlobTranslate = -40;
+
 let blobWhiteAlpha = 128;
 let blobPinkAlpha = 114;
+let secondSceneBlobAlpha = 0;
 
 let scene2Load = false;
 let enableSpaceBar = false;
 let deleteTextInstructions = false;
 let deleteBlobs = false;
+let backgroundAlpha = 0;
+
+let currentR = 139;
+let currentG = 195;
+let currentB = 74;
+
+let currentHovered;
+
+let drumsButton;
+let melodyButton;
+let synthButton;
+let vocalButton;
+
+let melodyState = false;
+let drumsState = false;
+let synthState = false;
+let vocalState = false;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   for(let i = 0;i<window.innerWidth/15;i++){
     particles.push(new Particle());
   }
+
+  melodyButton = new customButton(-r3,  -45, "Melody");
+  synthButton = new customButton(r3, -45, "Synth");
+  drumsButton = new customButton(0, -r3- 45, "Drums");
+  vocalButton = new customButton(0, r3 - 45, "Vocals");
 }
 
 function draw() {
+  r3 = window.innerHeight/4;
   resizeCanvas(window.innerWidth, window.innerHeight);
   for(let i = 0;i<particles.length;i++) {
     particles[i].createParticle();
     particles[i].moveParticle();
+  }
+
+  background(currentR, currentG, currentB, backgroundAlpha);
+
+  if (deleteBlobs) {
+    backgroundAlpha = lerp(backgroundAlpha, 125, 0.3);
+    secondSceneBlobAlpha = lerp(secondSceneBlobAlpha, 100, 0.050);
+    secondBlobTranslate = lerp(secondBlobTranslate, 0, 0.1);
   }
 
 
@@ -101,6 +137,48 @@ function draw() {
         endShape();
       pop();
     pop();
+  }
+
+  if(deleteBlobs) {
+    push();
+      translate(0, secondBlobTranslate);
+      //draw shape:
+      push();
+        translate(width/2, height/2 - 50);
+        noFill();
+        fill(55, 71, 79,secondSceneBlobAlpha);    // color
+        beginShape();
+          for (let a=0; a<TWO_PI;a+=TWO_PI/vertices_amount) {
+            let x = r3*sin(a);
+            let y = r3*cos(a);
+
+            let new_x = x + (
+                        noise(
+                ((x_off+x)/NOISE_SCALE),
+                ((y_off+y)/NOISE_SCALE),
+                       z_off) * px_offset * sin(a));
+
+            let new_y = y + (
+                        noise(
+                ((x_off+x)/NOISE_SCALE),
+                ((y_off+y)/NOISE_SCALE),
+                       z_off) * px_offset * cos(a))
+            vertex(new_x,new_y);
+          }
+        endShape();
+      pop();
+    pop();
+
+    melodyButton.draw();
+    synthButton.draw();
+    vocalButton.draw();
+    drumsButton.draw();
+
+    melodyButton.hover();
+    synthButton.hover();
+    vocalButton.hover();
+    drumsButton.hover();
+
   }
 
   // update NOISE offsets

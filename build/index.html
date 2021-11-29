@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Shimmer - Interactive EP</title>
+
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <meta name="theme-color" content="#FF00FF">
+
+  <link rel="icon" type="image/png" href="LogoBurhan.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.32/Tone.min.js"></script>
+  <script src="granim.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Amatic+SC&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+  <div class="content_container">
+    <div class="nav_bar">
+      <img src="LogoBurhan.png" alt="Algorism Music" class="nav_image"></img>
+      <img id="open_menu" src="menu.png" alt="Open Menu" class="menu_icon"></img>
+    </div>
+    <div class="bottom_bar">
+      <h1 class="ep_name">Shimmer - Interactive EP</h1>
+      <h1 class="artist_name">Composed by: HOPE</h1>
+    </div>
+
+
+    <div class="gradient_bg">
+      <img src="background.jpg" class="album_bg"></img>
+      <canvas id="granim_canvas"></canvas>
+    </div>
+
+  </div>
+
+  <div id="full_page_navigation" class="full_page_navigation fp_inVisible">
+    <div class="nav_bar">
+      <img src="algoblack.png" alt="Algorism Music" class="nav_image"></img>
+      <img id="close_menu" src="close.png" alt="Open Menu" class="menu_icon"></img>
+    </div>
+
+    <div class="links_container">
+      <h2 class="links_title">Follow music by HOPE</h2>
+      <div class="links_flex_cont">
+        <a style="text-decoration: none" href="https://open.spotify.com/artist/25EwXpRGFy61qsVC13PAp1?si=lyJfBOHCSMe7EG49sjJmeg" target="_blank" rel="noreferrer">
+          <div class="link_container">
+            <img src="spotify.png" class="comp_icon"></img>
+            <p class="link">Spotify</p>
+          </div>
+        </a>
+        <a style="text-decoration: none" href="https://www.youtube.com/playlist?list=PLvxXI_YrCbxvBavaViQboUvbWSsA8_uJo" target="_blank" rel="noreferrer">
+          <div class="link_container">
+            <img src="youtube.png" class="comp_icon"></img>
+            <p class="link">YouTube</p>
+          </div>
+        </a>
+        <a style="text-decoration: none" href="https://www.instagram.com/hopemakesmusic/" target="_blank" rel="noreferrer">
+          <div class="link_container">
+            <img src="instagram.png" class="comp_icon"></img>
+            <p class="link">Instagram</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="bottom_bar">
+      <h1 class="ep_name ep_name_menu">Shimmer - Interactive EP</h1>
+      <h1 class="artist_name artist_name_menu">Composed by: HOPE</h1>
+    </div>
+  </div>
+
+  <!-- Content -->
+</body>
+
+<script src="/assets/js/sketch.js"></script>
+<script src="/assets/js/script.js" ></script>
+<script src="/assets/js/particleSystem.js" ></script>
+
+</html>
