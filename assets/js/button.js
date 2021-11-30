@@ -20,7 +20,6 @@ class customButton {
   hover() {
     if (mouseX > ((window.innerWidth/2 + this.xPos) - textWidth(this.buttonName)/2) && mouseX < ((window.innerWidth/2 + this.xPos) + textWidth(this.buttonName)/2)) {
       if(mouseY < (window.innerHeight/2 + this.yPos) && mouseY > (window.innerHeight/2 + this.yPos - 30)) {
-        cursor('pointer');
         if (this.buttonName === "Melody") {
           melodyState = true;
         }
@@ -33,7 +32,28 @@ class customButton {
         if (this.buttonName === "Vocals") {
           vocalState = true;
         }
-        this.currentColor = lerpColor(this.currentColor, color(255,222,3), 0.2);
+
+        if(!drumsOpen && !synthOpen && !drumsOpen && !vocalOpen) {
+          cursor('pointer');
+          this.currentColor = lerpColor(this.currentColor, color(255,222,3), 0.2);
+        }
+
+        if(!drumsOpen && !synthOpen && !drumsOpen && !vocalOpen) {
+          if (mouseIsPressed) {
+            if (this.buttonName === "Melody") {
+              melodyOpen = true;
+            }
+            if (this.buttonName === "Synth") {
+              synthOpen = true;
+            }
+            if (this.buttonName === "Drums") {
+              drumsOpen = true;
+            }
+            if (this.buttonName === "Vocals") {
+              vocalOpen = true;
+            }
+          }
+        }
       }
       else {
         if (this.buttonName === "Melody") {
@@ -76,6 +96,5 @@ class customButton {
       }
     //  cursor('default');
     }
-
   }
 }

@@ -33,3 +33,44 @@ document.getElementById('close_menu').addEventListener('click', function() {
   full_page.classList.add("animate__fadeOut");
   full_page.classList.add("fp_inVisible");
 });
+
+document.getElementById('close_slider').addEventListener('click', function() {
+  restoreNavBar();
+});
+
+function changeNavBar() {
+  if (drumsOpen || melodyOpen || synthOpen || vocalOpen) {
+    if (!backtoMenuEnable) {
+      console.log('I am called');
+      let open_menu = document.getElementById('open_menu');
+      let close_pop_slider = document.getElementById('close_slider');
+      open_menu.classList.add("animate__animated");
+      close_pop_slider.classList.add("animate__animated");
+      open_menu.classList.remove("fp_visible");
+      open_menu.classList.add("fp_inVisible");
+      close_pop_slider.classList.remove("fp_inVisible");
+      close_pop_slider.classList.add("fp_visible");
+      open_menu.classList.remove("animate__fadeIn");
+      open_menu.classList.add("animate__fadeOut");
+      close_pop_slider.classList.remove("animate__fadeOut");
+      close_pop_slider.classList.add("animate__fadeIn");
+      backtoMenuEnable = false;
+    }
+  }
+}
+
+function restoreNavBar() {
+  let open_menu = document.getElementById('open_menu');
+  let close_pop_slider = document.getElementById('close_slider');
+
+  backtoMenuEnable = true;
+
+  close_pop_slider.classList.remove("fp_visible");
+  close_pop_slider.classList.add("fp_inVisible");
+  open_menu.classList.remove("fp_inVisible");
+  open_menu.classList.add("fp_visible");
+  close_pop_slider.classList.remove("animate__fadeIn");
+  close_pop_slider.classList.add("animate__fadeOut");
+  open_menu.classList.remove("animate__fadeOut");
+  open_menu.classList.add("animate__fadeIn");
+}

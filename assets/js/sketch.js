@@ -48,10 +48,19 @@ let melodyButton;
 let synthButton;
 let vocalButton;
 
+let drumsOpen = false;
+let melodyOpen = false;
+let synthOpen = false;
+let vocalOpen = false;
+
 let melodyState = false;
 let drumsState = false;
 let synthState = false;
 let vocalState = false;
+
+let backtoMenuEnable = false;
+
+let sliderMenuControllerOp = 0;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
@@ -255,7 +264,101 @@ function draw() {
           player2.start();
           playing = true;
         }
+
+        if (drumsOpen === true) {
+          renderSliderController('drums');
+        }
+        if (melodyOpen === true) {
+          renderSliderController('drums');
+        }
+        if (synthOpen === true) {
+          renderSliderController('drums');
+        }
+        if (vocalOpen === true) {
+          renderSliderController('drums');
+        }
       }
     }
+
+    if (backtoMenuEnable) {
+      sliderMenuControllerOp = lerp(sliderMenuControllerOp, -10, 0.7);
+      console.log(sliderMenuControllerOp);
+      if (sliderMenuControllerOp < 2) {
+        drumsOpen = false;
+        melodyOpen = false;
+        synthOpen = false;
+        vocalOpen = false;
+        backtoMenuEnable = false;
+      }
+    }
+  }
+}
+
+function renderSliderController(type) {
+  sliderMenuControllerOp = lerp(sliderMenuControllerOp, 230, 0.1);
+
+  if (drumsOpen || melodyOpen || synthOpen || vocalOpen) {
+    changeNavBar();
+  }
+
+  if (drumsOpen) {
+    push();
+      push();
+        fill(84, 110, 122,sliderMenuControllerOp);
+        rect(0,0,window.innerWidth, window.innerHeight);
+        push();
+          fill('#ffde03');
+          textSize(36);
+          textFont('Amatic SC');
+          textAlign(CENTER);
+          text('Drums', window.innerWidth/2, window.innerHeight/2-r3-45);
+        pop();
+      pop();
+    pop();
+  }
+  if (melodyOpen) {
+    push();
+      push();
+        fill(171, 71, 188,sliderMenuControllerOp);
+        rect(0,0,window.innerWidth, window.innerHeight);
+        push();
+          fill('#ffde03');
+          textSize(36);
+          textFont('Amatic SC');
+          textAlign(CENTER);
+          text('Melody', window.innerWidth/2, window.innerHeight/2-r3-45);
+        pop();
+      pop();
+    pop();
+  }
+  if (synthOpen) {
+    push();
+      push();
+        fill(117, 117, 117,sliderMenuControllerOp);
+        rect(0,0,window.innerWidth, window.innerHeight);
+        push();
+          fill('#ffde03');
+          textSize(36);
+          textFont('Amatic SC');
+          textAlign(CENTER);
+          text('Synths', window.innerWidth/2, window.innerHeight/2-r3-45);
+        pop();
+      pop();
+    pop();
+  }
+  if (vocalOpen) {
+    push();
+      push();
+        fill(1,87,155,sliderMenuControllerOp);
+        rect(0,0,window.innerWidth, window.innerHeight);
+        push();
+          fill('#ffde03');
+          textSize(36);
+          textFont('Amatic SC');
+          textAlign(CENTER);
+          text('Vocals', window.innerWidth/2, window.innerHeight/2-r3-45);
+        pop();
+      pop();
+    pop();
   }
 }
