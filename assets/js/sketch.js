@@ -233,8 +233,7 @@ function draw() {
     pop();
   }
 
-
-  if (player1.loaded && player2.loaded) {
+  if (dawn_synth.loaded && beginning_synth.loaded && shimmer_synth.loaded && dawn_drums.loaded && beginning_drums.loaded && shimmer_drums.loaded && dawn_vocals.loaded && beginning_vocals.loaded && shimmer_vocals.loaded && dawn_bass.loaded && beginning_bass.loaded && shimmer_bass.loaded && dawn_arp.loaded && beginning_arp.loaded && shimmer_arp.loaded && dawn_piano.loaded && beginning_piano.loaded && shimmer_piano.loaded) {
     soundsLoaded = true;
   }
 
@@ -260,8 +259,30 @@ function draw() {
         }
 
         if (!playing) {
-          player1.start();
-          player2.start();
+          dawn_synth.start();
+          beginning_synth.start();
+          shimmer_synth.start();
+
+          dawn_drums.start();
+          beginning_drums.start();
+          shimmer_drums.start();
+
+          dawn_vocals.start();
+          beginning_vocals.start();
+          shimmer_vocals.start();
+
+          dawn_bass.start();
+          beginning_bass.start();
+          shimmer_bass.start();
+
+          dawn_arp.start();
+          beginning_arp.start();
+          shimmer_arp.start();
+
+          dawn_piano.start();
+          beginning_piano.start();
+          shimmer_piano.start();
+
           playing = true;
         }
 

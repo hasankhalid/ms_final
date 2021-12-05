@@ -42,15 +42,19 @@ class customButton {
           if (mouseIsPressed) {
             if (this.buttonName === "Melody") {
               melodyOpen = true;
+              melody_inputs_container();
             }
             if (this.buttonName === "Synth") {
               synthOpen = true;
+              synth_inputs_container();
             }
             if (this.buttonName === "Drums") {
               drumsOpen = true;
+              drum_inputs_container();
             }
             if (this.buttonName === "Vocals") {
               vocalOpen = true;
+              vocalInputTransition();
             }
           }
         }

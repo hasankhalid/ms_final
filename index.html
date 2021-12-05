@@ -25,6 +25,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Amatic+SC&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.yellow-orange.min.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 
 <body>
@@ -83,7 +88,247 @@
     </div>
   </div>
 
-  <!-- Content -->
+  <div id="vocal_inputs_container" class="inputs_container fp_inVisible">
+    <div class="effects_fader_contain">
+      <div class="flexed_inputs_container">
+        <div class="input_container">
+          <div class="material_input_container">
+            <input id="shimmer_vocals" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+          <p class="song_title">Shimmer</p>
+        </div>
+        <div class="input_container">
+          <div class="material_input_container">
+            <input id="beginning_vocals" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+          <p class="song_title">Beginning</p>
+        </div>
+        <div class="input_container">
+          <div class="material_input_container">
+            <input id="dawn_vocals" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+          <p class="song_title">Unreleased</p>
+        </div>
+      </div>
+
+      <p class="section_heading effects_heading">Effects</p>
+      <div class="flexed_effects_container">
+        <div class="effect_input_container">
+          <p class="effect_title">Reverb</p>
+          <div class="material_input_container_flat">
+            <input id="vocal_reverb" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+        <div class="effect_input_container">
+          <p class="effect_title">Delay</p>
+          <div class="material_input_container_flat">
+            <input id="vocal_delay" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+        <div class="effect_input_container">
+          <p class="effect_title">Filter</p>
+          <div class="material_input_container_flat">
+            <input id="vocal_filter" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="drum_inputs_container" class="inputs_container fp_inVisible">
+    <div class="effects_fader_contain">
+      <div class="flexed_inputs_container">
+        <div class="input_container">
+          <div class="material_input_container">
+            <input id="shimmer_drums" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+          <p class="song_title">Shimmer</p>
+        </div>
+        <div class="input_container">
+          <div class="material_input_container">
+            <input id="beginning_drums" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+          <p class="song_title">Beginning</p>
+        </div>
+        <div class="input_container">
+          <div class="material_input_container">
+            <input id="dawn_drums" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+          <p class="song_title">Unreleased</p>
+        </div>
+      </div>
+
+      <p class="section_heading effects_heading">Effects</p>
+      <div class="flexed_effects_container">
+        <div class="effect_input_container">
+          <p class="effect_title">Distortion</p>
+          <div class="material_input_container_flat">
+            <input id="drums_distortion" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+        <div class="effect_input_container">
+          <p class="effect_title">Filter</p>
+          <div class="material_input_container_flat">
+            <input id="drums_filter" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="synth_inputs_container" class="inputs_container fp_inVisible">
+    <div class="effects_fader_contain">
+      <div class="flexed_sections_container">
+        <div class="flexed_section">
+          <p class="section_heading">Synths</p>
+          <div class="flexed_inputs_container">
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="shimmer_synth" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Shimmer</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="beginning_synth" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-10" tabindex="0">
+              </div>
+              <p class="song_title">Beginning</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="dawn_synth" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-20" tabindex="0">
+              </div>
+              <p class="song_title">Unreleased</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexed_section">
+          <p class="section_heading">Piano</p>
+          <div class="flexed_inputs_container">
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="shimmer_piano" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Shimmer</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="beginning_piano" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Beginning</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="dawn_piano" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Unreleased</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section_heading effects_heading">Effects</p>
+      <div class="flexed_effects_container">
+        <div class="effect_input_container">
+          <p class="effect_title">Reverb</p>
+          <div class="material_input_container_flat">
+            <input id="synth_reverb" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+        <div class="effect_input_container">
+          <p class="effect_title">Delay</p>
+          <div class="material_input_container_flat">
+            <input id="synth_delay" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+        <div class="effect_input_container">
+          <p class="effect_title">Filter</p>
+          <div class="material_input_container_flat">
+            <input id="synth_filter" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="melody_inputs_container" class="inputs_container fp_inVisible">
+    <div class="effects_fader_contain">
+      <div class="flexed_sections_container">
+        <div class="flexed_section">
+          <p class="section_heading">Melody</p>
+          <div class="flexed_inputs_container">
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="shimmer_melody" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Shimmer</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="beginning_melody" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-10" tabindex="0">
+              </div>
+              <p class="song_title">Beginning</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="dawn_melody" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-20" tabindex="0">
+              </div>
+              <p class="song_title">Unreleased</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexed_section">
+          <p class="section_heading">Bass</p>
+          <div class="flexed_inputs_container">
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="shimmer_bass" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Shimmer</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="beginning_bass" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Beginning</p>
+            </div>
+            <div class="input_container">
+              <div class="material_input_container">
+                <input id="dawn_bass" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+              </div>
+              <p class="song_title">Unreleased</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="section_heading effects_heading">Effects</p>
+      <div class="flexed_effects_container">
+        <div class="effect_input_container">
+          <p class="effect_title">Reverb</p>
+          <div class="material_input_container_flat">
+            <input id="melody_reverb" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+        <div class="effect_input_container">
+          <p class="effect_title">Delay</p>
+          <div class="material_input_container_flat">
+            <input id="melody_delay" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+        <div class="effect_input_container">
+          <p class="effect_title">Filter</p>
+          <div class="material_input_container_flat">
+            <input id="melody_filter" class="mdl-slider mdl-js-slider" type="range" min="-100" max="0" value="-100" tabindex="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content  fp_inVisible -->
 </body>
 
 <script src="/assets/js/button.js" ></script>
